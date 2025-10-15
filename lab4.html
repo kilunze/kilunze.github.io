@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script>
+            var name;
+            var item;
+            var amount;
+            now = new Date();
+            hour = now.getHours();
+
+            window.alert("Welcome to My Store!")
+
+            name = window.prompt("Please Enter your name: ", "Kevin");
+            item = window.prompt("What item would you like to purchase today?", "");
+            amount = 0;
+
+            if (hour < 12) {
+			document.write("<h1> Good Morning ")
+		    } else if (hour < 18) {
+			document.write("<h1> Good Afternoon ")
+		    } else {
+			document.write("<h1> Good Evening ")
+		    }
+		    document.writeln(name + ",  Welcome to Kevin's Online Shop!")
+
+            amount = parseInt(window.prompt("How many are you ordering? (1-99)", ""));
+
+            while (amount < 1 || amount > 99) {
+                window.alert("You cannot order more than 99 items! Please try again")
+                amount = parseInt(window.prompt("How many are you ordering? (1-99)", ""));
+            }
+            
+            if (amount == 1) {
+                document.write("\n<h2>Thank you for ordering ", amount + " " + item + "!")
+            }
+            else {
+                document.write("\n<h2>Thank you for ordering ", amount + " " + item + "s!")
+            }
+
+            const today = new Date();
+            const estArrival = new Date(today);
+            estArrival.setDate(today.getDate() + 7);
+            
+            document.write("\n<h2>Estimated Arrival Date: ", estArrival)
+            
+        </script>
+    </head>
+</html>
